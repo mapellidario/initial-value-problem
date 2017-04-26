@@ -14,7 +14,7 @@ There are two main parts:
 
 	`tan(\theta) = y'(x) = f(x, y)`
 
-  It also overlays the solutions obtained by the Runge-Kutta4 method onto the vector field.
+  It also overlays the solutions obtained by the Runge-Kutta4 method onto the direction field.
 
 ## Usage
 
@@ -52,3 +52,11 @@ to assert the quality of the code, which in result is far from
 being clean and optimized and may contain some not-so-nice workarounds.
 For example, I am sorry for the messy way of setting the parameters.
 I may consider to upgrade it in a remote future.
+
+## Example images
+
+Example 1
+![example1](examples/example1/field.png)
+
+Example 5
+![example1](examples/example5/field.png)

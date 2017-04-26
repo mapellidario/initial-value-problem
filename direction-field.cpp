@@ -43,7 +43,7 @@ int main(int numArg, char * listArg[]) {
 
 	// ROOT basic declarations
 //	TApplication* theApp = new TApplication("App", &numArg, listArg);
-	TCanvas *c1 = new TCanvas("c1","mappa ODE I ordine",200,10,1900,1000);
+	TCanvas *c1 = new TCanvas("c1","First Order ODE direction field",200,10,1900,1000);
 	c1->SetGrid();
 	int colorcanvas=1 ;
 
@@ -117,7 +117,7 @@ int main(int numArg, char * listArg[]) {
 		c1->GetFrame()->SetBorderSize(12);
 		c1->Modified();
 	}
-	c1->Print("map.png", "png");
+	c1->Print("field.png", "png");
 
 //	theApp->Run() ;
 
