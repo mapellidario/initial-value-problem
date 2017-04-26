@@ -6,7 +6,6 @@
 	int printpoints_glob=1000;
 
 	// Parameters for direction-field
-//	double ymin_glob = -0.99999, ymax_glob=0.9999 ;
 	double ymin_glob = -7., ymax_glob = 7. ;
 
 	// Parameters for rungekutta
