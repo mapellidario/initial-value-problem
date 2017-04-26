@@ -1,10 +1,11 @@
 /*
 
-Draws a graphical representation of the vector field associated with
+Draws a graphical representation of the direction field associated with
 the ODE
 
 ACHTUNG: this program requires the presence of a directory called
 'data' in the same directory of the executable
+
 */
 
 #include <iostream>
@@ -69,7 +70,7 @@ int main(int numArg, char * listArg[]) {
 
 	gr->SetPoint(counter+1, xmin, ymin);
 	gr->SetPoint(counter+2, xmax, ymax);
-	gr->SetTitle("mappa ODE I ordine");
+	gr->SetTitle(Form("Direction map first order ODE: %s", problemname)) ;
 	gr->SetMarkerStyle(7);
 	gr->SetMarkerColor(kRed);
 	gr->GetXaxis()->SetTitle("X");
@@ -93,7 +94,8 @@ int main(int numArg, char * listArg[]) {
 			if (tan >= 0) sin = sqrt ( tan*tan / (1.+tan*tan) );
 			else if(tan < 0) sin = - sqrt ( tan*tan / (1.+tan*tan) ) ;
 			if (sin==2.) std::cout << "error in computing the sin of a line" << std::endl ;
-			double l = (xmax-xmin)/xpts*0.33 / (1.+sin*sin) ;
+			// double l = (xmax-xmin)/xpts*0.33 / (1.+sin*sin) ;
+			double l = (xmax-xmin)/xpts*0.33 ;
 			line[i*ypts+j] =
 				new TLine(xctr-l*cos,yctr-l*sin,xctr+l*cos,yctr+l*sin) ;
 //			line->SetLineColor(kRed);

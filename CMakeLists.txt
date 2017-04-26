@@ -12,11 +12,11 @@ add_subdirectory (CauchyProblem)
 set(CAUCHYPROBLEM_EXTRA_LIBS ${CAUCHYPROBLEM_EXTRA_LIBS} CauchyProblem)
 set(CAUCHYPROBLEM_EXTRA_LIBS ${CAUCHYPROBLEM_EXTRA_LIBS} ${CMAKE_REQUIRED_LIBRARIES})
 
-add_executable(main-rungekutta main-rungekutta.c)
+add_executable(rungekutta rungekutta.c)
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)
-target_link_libraries(main-rungekutta ${RUNGEKUTTA_EXTRA_LIBS} ${CAUCHYPROBLEM_EXTRA_LIBS})
+target_link_libraries(rungekutta ${RUNGEKUTTA_EXTRA_LIBS} ${CAUCHYPROBLEM_EXTRA_LIBS})
 
-add_executable(vector-field vector-field.cpp)
+add_executable(direction-field direction-field.cpp)
 
 # You need to tell CMake where to find the ROOT installation. This can be done in a number of ways:
 #   - ROOT built with classic configure/make use the provided $ROOTSYS/etc/cmake/FindROOT.cmake
@@ -31,7 +31,7 @@ if(ROOT_FOUND)
     include_directories(${ROOT_INCLUDE_DIRS})
     message("-- ROOT found at ${ROOT_INCLUDE_DIRS}")
     # message("-- ROOT libraries: ${ROOT_LIBRARIES}")
-    target_link_libraries(vector-field ${CAUCHYPROBLEM_EXTRA_LIBS} ${ROOT_LIBRARIES})
+    target_link_libraries(direction-field ${CAUCHYPROBLEM_EXTRA_LIBS} ${ROOT_LIBRARIES})
 endif(ROOT_FOUND)
 if(NOT ROOT_FOUND)
     message(FATAL_ERROR "Package ROOT is required, but not found!")

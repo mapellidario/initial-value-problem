@@ -7,10 +7,18 @@ The initial values are of the form y(0) = y_0,
 in [minstart, maxstart] range on the y axis.
 RK4 work from 0 to x>0 and from 0 to x<0.
 It cannot work from x<0 to x>0 because the form of the problem changes
-whether the independent variable is positive or negative
+whether the independent variable is positive or negative, since
+
+z(x) = y(-x) -> z'(x) = - y'(-x) = - f (-x, y(-x)) = -f (-x, z(x))
 
 ACHTUNG: this program requires the presence of a directory called
 'data' in the same directory of the executable
+
+compile and execute only this
+ gcc -o rungekutta -lm -O3 -IRungeKutta -ICauchyProblem RungeKutta/RungeKutta.c CauchyProblem/CauchyProblem.c  rungekutta.c
+mkdir data
+./rungekutta
+
 */
 
 #include <stdio.h>

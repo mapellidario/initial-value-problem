@@ -1,6 +1,6 @@
 #!/bin/zsh
 
 cd build
-./main-rungekutta
-./vector-field
+./rungekutta
+./direction-field
 cd ..
