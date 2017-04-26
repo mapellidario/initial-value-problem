@@ -42,6 +42,19 @@ If you wish to compile them both, please use the aforementioned
 commands, otherwise it is possible to compile only `rungekutta`, details
 are in the source code.
 
+## Dependencies versions
+
+This repo is tested on a GNU/Linux machine with
+
+* gcc 6.3.1
+* cmake 3.7.2
+* root 6.06/08,  with following features activated: `root-config --features`: 
+> asimage astiff bonjour builtin_llvm cxx14 cling exceptions
+> explicitlink fftw3 fitsio fortran gviz genvector gnuinstall
+> gsl_shared krb5 ldap mathmore memstat minuit2 mt mysql odbc opengl
+> pch pgsql python roofit shadowpw shared sqlite ssl tbb thread tmva
+> vdt xft xml x11
+
 
 ## Status
 
