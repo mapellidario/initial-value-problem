@@ -70,7 +70,7 @@ int main(int numArg, char * listArg[]) {
 
 	gr->SetPoint(counter+1, xmin, ymin);
 	gr->SetPoint(counter+2, xmax, ymax);
-	gr->SetTitle(Form("Direction map first order ODE: %s", problemname)) ;
+	gr->SetTitle(Form("Direction field first order ODE: %s", problemname)) ;
 	gr->SetMarkerStyle(7);
 	gr->SetMarkerColor(kRed);
 	gr->GetXaxis()->SetTitle("X");

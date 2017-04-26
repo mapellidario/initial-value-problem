@@ -9,15 +9,15 @@
 
 // y'(x) = f(x,y(x)).
 double func (double x, double y) {
-	return sin(y) / (1.+cos(y)*cos(y));
-} //mappa
+	return fabs(y+y*y) / ((1.+exp(x)) * (1.+y*y) );
+} //map
 
 double f (double* y, double t, double* par){
-	return sin(y[0]) / (1.+cos(y[0])*cos(y[0]));
+	return fabs(y[0]+y[0]*y[0]) / ((1.+exp(t)) * (1.+y[0]*y[0]) );
 }//Rung-Kutta
 
 // z(x) = y(-x) -> z'(x) = - y'(-x) = - f (-x, y(-x)) = -f (-x, z(x))
 // QUI: z'(t) = fz (t,z(t)) = -f(-t,z(t))
 double fz (double* y, double t, double* par){
-	return - sin(y[0]) / (1.+cos(y[0])*cos(y[0]));
+	return - fabs(y[0]+y[0]*y[0]) / ((1.+exp(-t)) * (1.+y[0]*y[0]) );
 }
