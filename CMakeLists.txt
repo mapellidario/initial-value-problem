@@ -13,7 +13,7 @@ set(CAUCHYPROBLEM_EXTRA_LIBS ${CAUCHYPROBLEM_EXTRA_LIBS} CauchyProblem)
 set(CAUCHYPROBLEM_EXTRA_LIBS ${CAUCHYPROBLEM_EXTRA_LIBS} ${CMAKE_REQUIRED_LIBRARIES})
 
 add_executable(rungekutta rungekutta.c)
-file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)
+# file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/data)
 target_link_libraries(rungekutta ${RUNGEKUTTA_EXTRA_LIBS} ${CAUCHYPROBLEM_EXTRA_LIBS})
 
 add_executable(direction-field direction-field.cpp)
@@ -36,3 +36,8 @@ endif(ROOT_FOUND)
 if(NOT ROOT_FOUND)
     message(FATAL_ERROR "Package ROOT is required, but not found!")
 endif(NOT ROOT_FOUND)
+
+# install
+install(DIRECTORY DESTINATION data)
+install(TARGETS rungekutta DESTINATION bin)
+install(TARGETS direction-field DESTINATION bin)

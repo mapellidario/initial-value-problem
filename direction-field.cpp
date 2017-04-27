@@ -4,7 +4,7 @@ Draws a graphical representation of the direction field associated with
 the ODE
 
 ACHTUNG: this program requires the presence of a directory called
-'data' in the same directory of the executable
+'data' in the directory above of the executable
 
 */
 
@@ -56,7 +56,7 @@ int main(int numArg, char * listArg[]) {
 	while (starting[0] <= maxstart) {
 		printf("Initial Cond: %f\n", starting[0]) ;
 		char filename[64];
-		sprintf (filename, "data/out_%f.txt", starting[0]);
+		sprintf (filename, "../data/out_%f.txt", starting[0]);
 		std::ifstream input (filename) ;
 		while (1) {
 			input >> x[counter] >> y[counter];

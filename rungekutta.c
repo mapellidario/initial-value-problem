@@ -12,11 +12,11 @@ whether the independent variable is positive or negative, since
 z(x) = y(-x) -> z'(x) = - y'(-x) = - f (-x, y(-x)) = -f (-x, z(x))
 
 ACHTUNG: this program requires the presence of a directory called
-'data' in the same directory of the executable
+'data' in the directory above of the executable
 
 compile and execute only this
  gcc -o rungekutta -lm -O3 -IRungeKutta -ICauchyProblem RungeKutta/RungeKutta.c CauchyProblem/CauchyProblem.c  rungekutta.c
-mkdir data
+mkdir ../data
 ./rungekutta
 
 */
@@ -80,7 +80,7 @@ int main (int numArg, char * listArg[])
 			y1 [i] = 0 ;
 
 		char filename[64];
-		sprintf (filename, "data/out_%f.txt", starting[0]);
+		sprintf (filename, "../data/out_%f.txt", starting[0]);
 		FILE *output = fopen (filename, "w+");
 
 		// evolve the system

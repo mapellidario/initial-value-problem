@@ -1,6 +1,10 @@
-#!/bin/zsh
+#!/bin/bash
 
-cd build
+set -x
+
+source_dir=`cd "$(dirname '$1')" &>/dev/null && printf "$PWD"`
+
+cd $source_dir/install/bin
 ./rungekutta
 ./direction-field
-cd ..
+cd $source_dir
